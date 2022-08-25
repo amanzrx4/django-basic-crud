@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+{% for listing in listings %}
+
+
+<div class="px-3 py-2 bg-blue-200 rounded-sm">
+  <h3 class="text-3xl text-gray-600">{{listing.title}}</h3>
+
+  <img width="100" src="{{ listing.image.url }}" alt="" />
+
+  <a class="px-3 py-2 py-2 text-blue-700" href="/listing/{{listing.id}}"> view details </a>
+
+  <div>
+    <a class="px-3 py-2 py-2 text-blue-700" href="/listing/{{listing.id}}/edit">Edit</a>
+    <a class="px-3 py-2 py-2 text-blue-700" href="/listing/{{listing.id}}/delete">delete</a>
+  </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock content %}
